@@ -1,0 +1,19 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+	"name": "C# (.NET)",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/dotnet/sdk:8.0.100-preview.7",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"dotnet.defaultSolution": "NUnitTests.sln",
+				"dotnet.preferRuntimeFromSDK": true,
+				"extensions": [
+					"ms-dotnettools.csdevkit"
+				]
+			}
+		}
+	},
+	"postCreateCommand": "dotnet build NUnitTests.sln"
+}
